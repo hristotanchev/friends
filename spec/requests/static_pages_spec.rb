@@ -6,13 +6,18 @@ describe "StaticPages" do
 
     it "Contents Friends" do
       visit '/static_pages/home'
-      expect(page).to have_content 'Friends'
+      expect(page).to have_content 'Friends App'
     end
 
     it "should have the right title" do
 		  visit '/static_pages/home'
-		  expect(page).to have_title("Friends App | Home")
+		  expect(page).to have_title("Friends App")
 		end
+
+    it "does not contain a custom page title" do
+      visit '/static_pages/home'
+      expect(page).to_not have_title("| Home")
+    end
   end
 
   context "Help page" do
