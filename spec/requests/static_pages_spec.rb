@@ -1,61 +1,34 @@
 require 'spec_helper'
 
 describe "StaticPages" do
+  subject { page }
 
   context "Home page" do
+    before { visit root_path }
 
-    it "Contents Friends" do
-      visit '/static_pages/home'
-      expect(page).to have_content 'Friends App'
-    end
-
-    it "should have the right title" do
-		  visit '/static_pages/home'
-		  expect(page).to have_title("Friends App")
-		end
-
-    it "does not contain a custom page title" do
-      visit '/static_pages/home'
-      expect(page).to_not have_title("| Home")
-    end
+    it { should have_content 'Friends App' }
+    it { should have_title full_title('') }
+    it { should_not have_title '| Home' }
   end
 
   context "Help page" do
+    before { visit help_path }
 
-    it "Contents Help" do
-      visit '/static_pages/help'
-      expect(page).to have_content 'Help'
-    end
-
-    it "should have the right title" do
-		  visit '/static_pages/help'
-		  expect(page).to have_title("Friends App | Help")
-		end
+    it { should have_content 'Help' }
+    it { should have_title full_title('Help') }
   end
   
   context "Aboute page" do
+    before { visit about_path }
 
-    it "Contents Aboute Us" do
-      visit '/static_pages/about'
-      expect(page).to have_content 'Aboute Us'
-    end
-
-    it "should have the right title" do
-		  visit '/static_pages/about'
-		  expect(page).to have_title("Friends App | About")
-		end
+    it { should have_content 'About Us' }
+    it { should have_title full_title('About') }
   end
 
   context "Contact page" do
+    before { visit contact_path }
 
-    it "Contents Contact" do
-      visit '/static_pages/contact'
-      expect(page).to have_content 'Contact'
-    end
-
-    it "should have the right title" do
-      visit '/static_pages/contact'
-      expect(page).to have_title("Friends App | Contact")
-    end
+    it { should have_content 'Contact' }
+    it { should have_title full_title('Contact') }
   end
 end
