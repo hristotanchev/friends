@@ -3,7 +3,7 @@ development:
   adapter: mysql
   database: friends_development
   username: root
-  password: root
+  password: 
   encouding: utf8
 
 # Warning: The database defined as "test" will be erased and
@@ -13,7 +13,7 @@ test:
   adapter: mysql
   database: friends_test
   username: root
-  password: root
+  password: 
   encouding: utf8
 
 
@@ -21,5 +21,5 @@ production:
   adapter: mysql
   database: friends_production
   username: root
-  password: root
+  password: 
   encouding: utf8
