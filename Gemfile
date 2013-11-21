@@ -7,6 +7,10 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'haml'
 
+group :development do
+  gem 'quiet_assets', '~> 1.0.2'
+end
+
 group :development, :test do
   gem 'mysql'
   gem 'rspec-rails', '2.13.1'
