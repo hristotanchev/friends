@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'haml'
+gem 'mechanize', '~> 2.7.1'
 
 group :development do
   gem 'quiet_assets', '~> 1.0.2'

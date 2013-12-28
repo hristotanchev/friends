@@ -1,6 +1,7 @@
 Friends::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :uiss_info
 
   root 'static_pages#home'
   
@@ -11,6 +12,8 @@ Friends::Application.routes.draw do
   match "/help", to: 'static_pages#help', via: 'get'
   match "/about", to: 'static_pages#about', via: 'get'
   match "/contact", to: 'static_pages#contact', via: 'get'
+
+  #match "/uiss_info", to: 'uiss_info#index', via: 'post', as: :uiss_info
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
