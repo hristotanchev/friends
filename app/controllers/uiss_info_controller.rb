@@ -31,7 +31,7 @@ class UissInfoController < ApplicationController
 
   def show
     respond_to do |format|
-      format.json { render json: $marks_array.last }
+      format.json { render json: $marks_array.last.encode("UTF-8") }
     end
   end
 
