@@ -24,14 +24,14 @@ class UissInfoController < ApplicationController
   	testov(egn, fac_num)	
 
     respond_to do |format|
-      format.json { render json: $marks_array }
+      format.json { render json: $marks_array.to_s.split(/\r?\n/) }
       format.html { render action: 'show' }
     end
   end  	
 
   def show
     respond_to do |format|
-      format.json { render json: $marks_array }
+      format.json { render json: $marks_array.to_s.split(/\r?\n/) }
     end
   end
 
@@ -55,7 +55,7 @@ class UissInfoController < ApplicationController
         content =  Nokogiri::HTML(marks.body)
         
         content.css('.list_table').each do |f|
-          $marks_array << f.content
+          $marks_array << f.content.to_s
           puts f.content
         end
       end
