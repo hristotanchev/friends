@@ -27,10 +27,15 @@ class UissInfoController < ApplicationController
     #end
 
     respond_to do |format|
-      format.html { render action: 'index' }
       format.json { render json: $marks_array }
+      format.html { render action: 'index' }
+      
     end
   end  	
+
+  def show
+  	
+  end
 
   def testov(first, last)
     puts first

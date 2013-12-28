@@ -1,0 +1,16 @@
+%div.row
+  
+  %div.span6.offset3
+    = form_for :uiss, controller: 'uiss_info', action: 'index'  do |f|#uiss_info_path do |f| 
+      -#= render 'shared/error_messages' 
+			
+      = f.label :egn 
+      = f.text_field :egn 
+
+      = f.label :fac_num 
+      = f.text_field :fac_num
+
+      = f.submit "Take Info", class: "btn btn-large btn-primary" 
+
+%h1 TEST
+= $marks_array
