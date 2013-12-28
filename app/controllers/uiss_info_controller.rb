@@ -27,7 +27,7 @@ class UissInfoController < ApplicationController
     #end
 
     respond_to do |format|
-      format.json { render json: $marks_array }
+      format.json { render json: $marks_array.to_json }
       format.html { render action: 'show' }
       
     end
