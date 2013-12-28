@@ -21,20 +21,18 @@ class UissInfoController < ApplicationController
     egn = params[:uiss][:egn]
     fac_num = params[:uiss][:fac_num]
     
-    #if !egn.nil? and !fac_num.nil?
-    	puts 'HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE'
-    	testov(egn, fac_num)	
-    #end
+  	testov(egn, fac_num)	
 
     respond_to do |format|
-      format.json { render json: $marks_array.to_json }
+      format.json { render json: $marks_array }
       format.html { render action: 'show' }
-      
     end
   end  	
 
   def show
-
+    respond_to do |format|
+      format.json { render json: $marks_array }
+    end
   end
 
   def testov(first, last)
