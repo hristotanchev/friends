@@ -28,13 +28,13 @@ class UissInfoController < ApplicationController
 
     respond_to do |format|
       format.json { render json: $marks_array }
-      format.html { render action: 'index' }
+      format.html { render action: 'show' }
       
     end
   end  	
 
   def show
-  	
+
   end
 
   def testov(first, last)
