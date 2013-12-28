@@ -31,7 +31,7 @@ class UissInfoController < ApplicationController
 
   def show
     respond_to do |format|
-      format.json { render json: $marks_array.to_s.split(/\r?\n/) }
+      format.json { render json: $marks_array.last }
     end
   end
 
